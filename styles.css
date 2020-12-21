@@ -1,1 +1,71 @@
 /*Maak hier jouw CSS!*/
+.container {
+    background-color: #F7D3CF;
+    display: grid;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50 px 50px;
+    grid-template-areas:
+            "header"
+            "textarea"
+            "aside-big"
+            "aside-small"
+            "aside-dynamic"
+            "empty"
+            "footer";
+}
+
+.item {
+    background-color: #972D2D;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-a {
+    grid-area: header;
+}
+
+#item-b {
+    grid-area: textarea;
+
+}
+
+#item-c {
+    grid-area: aside-big;
+}
+
+#item-d {
+    grid-area: aside-small;
+}
+
+#item-e {
+    grid-area: aside-dynamic;
+    max-height: 100px
+}
+
+#item-f {
+    grid-area: footer;
+}
+
+@media screen and (min-width: 576px) {
+    /*styling alles groter dan mobiel*/
+    .container {
+        background-color: #F7D3CF;
+        display: grid;
+        row-gap: 16px;
+        column-gap: 16px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px auto 100px 50px 50px 50px;
+        grid-template-areas:
+            "header aside-big aside-big"
+            "textarea aside-big aside-big"
+            "textarea aside-small aside-dynamic"
+            "textarea aside-small aside-dynamic"
+            "textarea aside-small aside-dynamic"
+            "footer footer footer";
+    }
+}
+
